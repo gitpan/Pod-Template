@@ -8,7 +8,7 @@ use Locale::Maketext::Simple Style  => 'gettext';
 use strict;
 use vars qw[@ISA $VERSION $DEBUG $WARNINGS];
 
-$VERSION    = 0.01;
+$VERSION    = 0.02;
 $DEBUG      = 0;
 $WARNINGS   = 1;
 
@@ -227,7 +227,7 @@ sub parse {
     my ($file);
     my $tmpl = {
         template    => { required => 1, store => \$file,
-                            allow => sub { -e shift() } },
+                            allow => sub { -e pop() } },
         #as          => { required => 1, store => \$as },                 
     };
     
